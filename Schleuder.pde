@@ -14,13 +14,15 @@ class Schleuder {
     slingshot.setSensor(true);
     world.add(slingshot);
 
-    species = int(random(0, 3));
+    species = int(random(0, 4));
     if (species == 0) {
       bird = new Red();
     } else if (species == 1) {
       bird = new Chuck();
     } else if (species == 2) {
       bird = new Blue(); 
+    } else if (species == 3) {
+      bird = new Bubbles(); 
     }
     bird.setSensor(true);
     bird.setPosition(120, 280);
@@ -63,12 +65,14 @@ class Schleuder {
         bird = new Chuck();
       } else if (species == 2) {
         bird = new Blue();
+      } else if (species == 3) {
+        bird = new Bubbles(); 
       }
 
       bird.setSensor(true);
       bird.setGrabbable(true);
       bird.setPosition(120, 280);
-      species = int(random(0, 3));
+      species = int(random(0, 4));
 
       world.add(bird);
 

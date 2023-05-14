@@ -2,6 +2,7 @@ import fisica.*;
 FWorld world;
 
 Schleuder schleuder;
+Bubbles bubbles; 
 FBox cliff;
 int numEggs = 3;
 int score = 0;
@@ -36,6 +37,7 @@ void draw() {
   text(score, 200, 200);
   schleuder.checkJoint();
   schleuder.checkRespawn();
+  
   world.step();
   world.draw();
 
@@ -70,6 +72,10 @@ void contactStarted(FContact contact) { //bug: ballons können ineinander spawne
       b.setSpeed(-100);
       b.removeAnhang();
       score += 1;
+    }
+    if (contact.getBody1() == schleuder.bird && schleuder.bird instanceof Bubbles || contact.getBody2() == schleuder.bird && schleuder.bird instanceof Bubbles) {
+      bubbles.blowup(); 
+      println("Blow");
     }
   }
 }

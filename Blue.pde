@@ -2,12 +2,12 @@ class Blue extends Vogel {
   Blue children[] = new Blue[2];
 
   Blue() {
-    super.attachImage(loadImage("Blue.png"));
+    super.attachImage(blueTexture);
   }
 
   @Override
     void split() {
-    if (children[0] == null) {
+    if (children[0] == null) {      //Wenn die Blauen abgeschossen werden, dann werden zwei neue Instanzen erzeugt, die leicht unter und über der Originalinstanz sind und versetzte Geschwindigkeiten haben
       children[0] = new Blue();
       children[1] = new Blue();
       world.add(children[0]);

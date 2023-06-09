@@ -1,4 +1,4 @@
-class Hittable extends FCircle {
+class Hittable extends FCircle {      //Eigentlich unnötig
   Hittable() {
     super(30);
   }

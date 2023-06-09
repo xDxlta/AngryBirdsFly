@@ -5,7 +5,8 @@ class Vogel extends FCircle {
     super.setSensor(false);
   }
   
-  void split() {}
+  void split() {}      //Wird hier schonmal erzeugt (aber leer), dmait ich in den Klassen später mit Override etwas hinzufügen kann
+  void blowup() {}
   void remove() {
    world.remove(this); 
   }
